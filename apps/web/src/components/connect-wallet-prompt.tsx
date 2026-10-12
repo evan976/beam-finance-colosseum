@@ -2,7 +2,8 @@
 
 import { Button } from '@beam/ui/components/button'
 import { useConnectWallet, useWalletConnectors } from '@solana/connector/react'
-import { Wallet, Zap } from 'lucide-react'
+import { Wallet } from 'lucide-react'
+import Image from 'next/image'
 
 export function ConnectWalletPrompt() {
   const connectors = useWalletConnectors()
@@ -18,9 +19,14 @@ export function ConnectWalletPrompt() {
   return (
     <div className="flex min-h-svh items-center justify-center">
       <div className="mx-auto max-w-sm text-center">
-        <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-2xl bg-muted">
-          <Zap className="size-8 text-primary" />
-        </div>
+        <Image
+          src="/logo.svg"
+          alt="Beam Finance"
+          width={48}
+          height={48}
+          priority
+          className="mx-auto mb-6 dark:invert"
+        />
         <h1 className="font-bold text-2xl tracking-tight">
           Welcome to Beam Finance
         </h1>

@@ -49,9 +49,12 @@ export const metadata: Metadata = {
       'AI-powered treasury management for modern teams. Manage payroll, reimbursements, and transfers on Solana with a full on-chain audit trail.',
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/logo-square.svg',
-    apple: '/logo-square.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/apple-icon.png', type: 'image/png', sizes: '180x180' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/apple-icon.png',
   },
 }
 

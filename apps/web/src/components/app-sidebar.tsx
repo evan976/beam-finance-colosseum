@@ -55,12 +55,12 @@ export function AppSidebar({
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <div className="flex items-center justify-center">
-          <Link href="/" className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo-square.svg"
+              src="/logo.svg"
               alt="Beam Finance"
-              width={32}
-              height={32}
+              width={24}
+              height={24}
               className="dark:invert"
             />
             <span className="hidden font-bold text-lg uppercase md:block">

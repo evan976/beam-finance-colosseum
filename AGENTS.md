@@ -121,8 +121,6 @@ packages/
       styles/             # globals.css
   contracts/              # Optional EVM contracts and Hardhat tests
   tsconfig/               # Shared TypeScript configs
-docs/
-  PRD.md                  # Product requirements document
 ```
 
 ## Anchor / Solana Guidelines

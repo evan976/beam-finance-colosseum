@@ -11,7 +11,7 @@ export function Footer({ chain = 'solana' }: { chain?: LandingChain }) {
         <div className="flex items-center gap-2">
           <Link href="/">
             <Image
-              src="/logo-square.svg"
+              src="/logo.svg"
               alt="Beam Finance"
               width={32}
               height={32}
@@ -29,7 +29,7 @@ export function Footer({ chain = 'solana' }: { chain?: LandingChain }) {
             {copy.footerChain.label}
           </a>
           <a
-            href="https://github.com/evan976/beam-finance"
+            href="https://github.com/evan976/beam-finance-colosseum"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-foreground"

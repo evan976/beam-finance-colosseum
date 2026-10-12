@@ -7,12 +7,12 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-border/40 border-b bg-background/95 supports-backdrop-filter:bg-background/80 supports-backdrop-filter:backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo-square.svg"
+              src="/logo.svg"
               alt="Beam Finance"
-              width={32}
-              height={32}
+              width={24}
+              height={24}
               className="dark:invert"
             />
             <span className="hidden font-bold text-xl md:block">
