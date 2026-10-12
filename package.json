@@ -1,0 +1,27 @@
+{
+  "name": "beam-finance",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "bun@1.4.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "check": "biome check",
+    "format": "biome format --write",
+    "lint": "biome lint .",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@beam/tsconfig": "workspace:*",
+    "@biomejs/biome": "2.4.6",
+    "turbo": "^2.8.8",
+    "typescript": "5.9.3"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
