@@ -1,0 +1,37 @@
+{
+  "name": "@beam/evm-contracts",
+  "version": "0.0.1",
+  "private": true,
+  "exports": {
+    "./abi/BeamFinance.json": "./abi/BeamFinance.json",
+    "./abi/BeamFinance": "./abi/BeamFinance.ts"
+  },
+  "scripts": {
+    "build": "hardhat compile && node scripts/export-abi.mjs",
+    "clean": "hardhat clean",
+    "test": "hardhat test",
+    "typecheck": "tsc --noEmit",
+    "deploy:edu-testnet": "hardhat run scripts/deploy.ts --network eduChainTestnet",
+    "deploy:og-mainnet": "hardhat run scripts/deploy.ts --network ogMainnet",
+    "deploy:og-testnet": "hardhat run scripts/deploy.ts --network ogGalileoTestnet",
+    "verify:edu-testnet": "hardhat run scripts/verify.ts --network eduChainTestnet",
+    "verify:og-mainnet": "hardhat run scripts/verify.ts --network ogMainnet",
+    "verify:og-testnet": "hardhat run scripts/verify.ts --network ogGalileoTestnet",
+    "deploy:mock-token:edu-testnet": "hardhat run scripts/deploy-mock-token.ts --network eduChainTestnet",
+    "deploy:mock-token:og-mainnet": "hardhat run scripts/deploy-mock-token.ts --network ogMainnet",
+    "deploy:mock-token:og-testnet": "hardhat run scripts/deploy-mock-token.ts --network ogGalileoTestnet"
+  },
+  "devDependencies": {
+    "@beam/tsconfig": "workspace:*",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "5.2.0",
+    "@types/chai": "^4.3.20",
+    "@types/node": "^25.1.0",
+    "chai": "^4.5.0",
+    "dotenv": "^17.3.1",
+    "ethers": "^6.16.0",
+    "hardhat": "^2.22.18",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
