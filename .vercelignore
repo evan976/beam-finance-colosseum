@@ -1,0 +1,15 @@
+node_modules
+**/node_modules
+.next
+**/.next
+.turbo
+**/.turbo
+packages/anchor/target
+packages/contracts/artifacts
+packages/contracts/cache
+packages/contracts/typechain-types
+test-ledger
+test-results
+playwright-report
+.git
+.env*
