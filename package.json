@@ -17,6 +17,7 @@
   "devDependencies": {
     "@beam/tsconfig": "workspace:*",
     "@biomejs/biome": "2.4.6",
+    "next": "16.4.0",
     "turbo": "^2.8.8",
     "typescript": "5.9.3"
   },
