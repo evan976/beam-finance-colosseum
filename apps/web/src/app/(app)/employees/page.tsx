@@ -94,6 +94,12 @@ export default function EmployeesPage() {
       return
     try {
       const employeePubkey = new PublicKey(newEmployee.trim())
+      if (employeePubkey.equals(publicKey)) {
+        toast.error('This is your admin wallet', {
+          description: 'Enter the employee’s own Solana wallet address.',
+        })
+        return
+      }
       const salaryAmount = Math.floor(
         parseFloat(baseSalary) * 10 ** TOKEN_DECIMALS,
       )
