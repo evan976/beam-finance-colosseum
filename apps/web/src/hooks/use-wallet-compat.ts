@@ -9,7 +9,12 @@ import {
   useTransactionSigner,
   useWallet,
 } from '@solana/connector/react'
-import { Connection, PublicKey } from '@solana/web3.js'
+import {
+  Connection,
+  PublicKey,
+  type SendOptions,
+  type Transaction,
+} from '@solana/web3.js'
 import { resolveClusterUrl } from '@/lib/constants'
 
 export function useWalletCompat() {
@@ -46,6 +51,18 @@ export function useWalletCompat() {
     })
   }, [cluster])
 
+  const sendTransaction = React.useCallback(
+    async (
+      transaction: Transaction,
+      _connection: Connection,
+      options?: SendOptions,
+    ) => {
+      if (!signer) throw new Error('Wallet not connected')
+      return signer.signAndSendTransaction(transaction, options)
+    },
+    [signer],
+  )
+
   return {
     publicKey,
     address: address ?? null,
@@ -56,7 +73,7 @@ export function useWalletCompat() {
     signAndSendTransaction: signer
       ? signer.signAndSendTransaction.bind(signer)
       : null,
-    sendTransaction: adapterCompat.sendTransaction,
+    sendTransaction: signer ? sendTransaction : adapterCompat.sendTransaction,
     signTransaction: adapterCompat.signTransaction,
     signAllTransactions: adapterCompat.signAllTransactions,
   }

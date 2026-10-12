@@ -17,9 +17,32 @@ export async function signAndSend(
   const latest = await connection.getLatestBlockhash('confirmed')
   tx.recentBlockhash = latest.blockhash
 
-  const sig = await sendTransaction(tx, connection, {
-    skipPreflight: opts?.skipPreflight ?? false,
-  })
+  let sig: string
+  try {
+    sig = await sendTransaction(tx, connection, {
+      skipPreflight: opts?.skipPreflight ?? false,
+    })
+  } catch (error) {
+    try {
+      const simulation = await connection.simulateTransaction(tx)
+      if (simulation.value.err) {
+        const logs =
+          simulation.value.logs?.join('\n') ?? 'No simulation logs available'
+        throw new Error(
+          `Transaction simulation failed: ${JSON.stringify(simulation.value.err)}\n${logs}`,
+        )
+      }
+    } catch (simulationError) {
+      if (
+        simulationError instanceof Error &&
+        simulationError.message.startsWith('Transaction simulation failed:')
+      ) {
+        throw simulationError
+      }
+    }
+
+    throw error
+  }
 
   const confirmation = await connection.confirmTransaction(
     {
