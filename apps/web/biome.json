@@ -1,0 +1,76 @@
+{
+  "root": false,
+  "extends": "//",
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
+    },
+    "rules": {
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "fix": "safe",
+          "options": {
+            "attributes": ["className"],
+            "functions": ["cn", "cva", "twMerge", "clsx"]
+          }
+        }
+      },
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off",
+        "noUnknownAtRules": "off",
+        "noDuplicateProperties": "off",
+        "useIterableCallbackReturn": "off",
+        "noAssignInExpressions": "off",
+        "noDocumentCookie": "off"
+      },
+      "a11y": {
+        "useFocusableInteractive": "off",
+        "useKeyWithClickEvents": "off",
+        "useSemanticElements": "off",
+        "noSvgWithoutTitle": "off",
+        "useAriaPropsForRole": "off",
+        "noNoninteractiveTabindex": "off",
+        "useAriaPropsSupportedByRole": "off",
+        "noStaticElementInteractions": "off",
+        "noLabelWithoutControl": "off",
+        "useValidAnchor": "off",
+        "useAnchorContent": "off",
+        "noRedundantRoles": "off"
+      },
+      "complexity": {
+        "noUselessFragments": "off",
+        "noImportantStyles": "off",
+        "useLiteralKeys": "off"
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "noHeadElement": "off",
+        "noDescendingSpecificity": "off",
+        "useExponentiationOperator": "off"
+      },
+      "performance": {
+        "noImgElement": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      }
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [":NODE:", "react", "next"]
+          }
+        }
+      }
+    }
+  }
+}
